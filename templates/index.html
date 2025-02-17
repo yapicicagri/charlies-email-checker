@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Charlie's Email Checker</title>
+    <style>
+      /* Container set to inline-block to shrink-wrap its content */
+      .container {
+        display: inline-block;
+        text-align: left;
+      }
+      .container > div {
+        margin: 0.5rem 0;
+      }
+      /* Flex container for button and result */
+      .button-result {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      /* Allow the result text to wrap within available space */
+      #result {
+        margin-left: auto;
+        text-align: right;
+        white-space: normal;
+        word-wrap: break-word;
+      }
+    </style>
+    <script>
+      function validateEmail() {
+        var email = document.getElementById("email").value;
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!regex.test(email)) {
+          document.getElementById("result").textContent = "Invalid format";
+          return false;
+        }
+        document.getElementById("result").textContent = "";
+        return true;
+      }
+    </script>
+  </head>
+  <body style="text-align: center;">
+    <form action="/" method="post">
+      <div class="container">
+        <div>
+          <input autofocus id="email" name="email" onkeyup="validateEmail();" placeholder="Email" required type="email">
+        </div>
+        <div class="button-result">
+          <button type="submit">Check</button>
+          <span id="result">{{result}}</span>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
