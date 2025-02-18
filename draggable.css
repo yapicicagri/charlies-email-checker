@@ -1,0 +1,29 @@
+/* The main container for the popup */
+#email-checker-popup {
+  position: fixed;
+  right: 0;
+  top: 100px;
+  width: 300px;
+  height: 400px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  overflow: hidden;
+}
+
+/* The header that serves as the draggable handle */
+#email-checker-popup #popup-header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  cursor: move;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Style the iframe to fill the remaining space */
+#email-checker-popup iframe {
+  width: 100%;
+  height: calc(100% - 40px); /* Adjust if your header's height changes */
+  border: none;
+}

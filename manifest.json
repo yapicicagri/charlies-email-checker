@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Charlie's Email Checker",
+  "version": "1.0",
+  "description": "Injects a draggable email checker popup on web pages.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["draggable.js"],
+      "css": ["draggable.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["templates/index.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
